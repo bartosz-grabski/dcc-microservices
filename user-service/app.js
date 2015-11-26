@@ -4,13 +4,8 @@ var app = express();
 
 users = ['user1', 'user2', 'user3'];
 
-
-app.get('/', function (req, res) {
-  res.send('Hello World from User Service');
-});
-
-app.get('/users', function(req, res) {
-  res.send(users)
+app.get('/', function(req, res) {
+  res.send(JSON.stringify(users));
 });
 
 

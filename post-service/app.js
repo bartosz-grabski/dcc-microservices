@@ -3,20 +3,15 @@ var app = express();
 
 
 posts = [
-	{ "Post1 content" },
-	{ "Post2 content" },
-	{ "Post3 content" }
+	"Post1 content" ,
+	"Post2 content",
+	"Post3 content"
 ];
 
 
 app.get('/', function (req, res) {
-  res.send('Hello World from Post Service!');
+  res.send(JSON.stringify(posts));
 });
-
-app.get('/posts', function(req, res) {
-  res.send(posts)
-});
-
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
